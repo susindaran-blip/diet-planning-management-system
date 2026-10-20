@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Your Diet Plan</title>
+
+<link rel="stylesheet"
+href="/static/css/style.css">
+
+</head>
+
+<body class="result-page">
+<div class="food-background">
+
+<span class="food">🍎</span>
+<span class="food">🥕</span>
+<span class="food">🥗</span>
+<span class="food">🍉</span>
+<span class="food">🥑</span>
+<span class="food">🍓</span>
+<span class="food">🍌</span>
+<span class="food">🍇</span>
+<span class="food">🥒</span>
+<span class="food">🍍</span>
+
+</div>
+
+<div class="container">
+
+<h1>🍲 Your Diet Plan</h1>
+
+<h3>Hello {{ name }} 👋</h3>
+
+<p>
+<strong>Disease:</strong> {{ disease }}
+</p>
+
+<p>
+<strong>Decision:</strong> {{ decision }}
+</p>
+
+<p>
+<strong>BMI:</strong> {{ bmi }}
+</p>
+
+
+<!-- ===== DIET REPORT (NEW FEATURE) ===== -->
+
+<div class="suggestion">
+
+<h3>📋 Diet Report</h3>
+
+<p>
+{{ report }}
+</p>
+
+</div>
+
+
+<!-- ===== MEAL TABLE ===== -->
+
+{% if plan_type == "day" %}
+
+<h2>🍱 Day Diet Plan</h2>
+
+<table border="1">
+
+<tr>
+    <th>Meal</th>
+    <th>Food</th>
+</tr>
+
+{% for row in day_data %}
+
+<tr>
+    <td>{{ row.meal }}</td>
+    <td>{{ row.food }}</td>
+</tr>
+
+{% endfor %}
+
+</table>
+
+{% endif %}
+
+{% if plan_type == "week" %}
+
+<h2>📅 Weekly Diet Plan</h2>
+
+<table border="1">
+
+<tr>
+
+<th>Day</th>
+<th>Breakfast</th>
+<th>Lunch</th>
+<th>Dinner</th>
+<th>Snack</th>
+
+</tr>
+
+{% for row in weekly_data %}
+
+<tr>
+
+<td>{{ row.day_name }}</td>
+<td>{{ row.breakfast }}</td>
+<td>{{ row.lunch }}</td>
+<td>{{ row.dinner }}</td>
+<td>{{ row.snack }}</td>
+
+</tr>
+
+{% endfor %}
+
+</table>
+
+{% endif %}
+{% if plan_type == "month" %}
+
+<h2>🗓️ Monthly Diet Plan</h2>
+
+{% for week in month_data %}
+
+<h3>📅 Week {{ loop.index }}</h3>
+
+<table border="1">
+
+<tr>
+
+<th>Day</th>
+<th>Breakfast</th>
+<th>Lunch</th>
+<th>Dinner</th>
+<th>Snack</th>
+
+</tr>
+
+{% for row in week %}
+
+<tr>
+
+<td>{{ row.day_name }}</td>
+<td>{{ row.breakfast }}</td>
+<td>{{ row.lunch }}</td>
+<td>{{ row.dinner }}</td>
+<td>{{ row.snack }}</td>
+
+</tr>
+
+{% endfor %}
+
+</table>
+
+<br>
+
+{% endfor %}
+
+{% endif %}
+
+
+<!-- ===== SUGGESTION BOX ===== -->
+
+<div class="suggestion">
+
+<p>
+📌 {{ suggestion.suggestion }}
+</p>
+
+<p>
+⏳ <strong>Expected Recovery:</strong>
+{{ suggestion.recovery_days }} days
+</p>
+
+</div>
+
+
+<br>
+
+<!-- ===== BACK BUTTON ===== -->
+
+<a href="/home">
+
+<button>
+
+⬅ Back
+
+</button>
+
+</a>
+
+
+<br><br>
+
+<!-- ===== LOGOUT BUTTON ===== -->
+
+<a href="/logout">
+
+<button>
+
+Logout
+
+</button>
+
+</a>
+
+</div>
+
+</body>
+
+</html>

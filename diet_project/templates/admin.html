@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Admin Dashboard</title>
+
+<link rel="stylesheet" href="/static/css/style.css">
+
+</head>
+
+<body class="admin-page">
+
+<div class="food-background">
+
+<span class="food">🍎</span>
+<span class="food">🥕</span>
+<span class="food">🥗</span>
+<span class="food">🍉</span>
+<span class="food">🥑</span>
+<span class="food">🍓</span>
+<span class="food">🍌</span>
+<span class="food">🍇</span>
+<span class="food">🥒</span>
+<span class="food">🍍</span>
+
+</div>
+
+<div class="container">
+
+<h1>👨‍💼 Admin Dashboard</h1>
+
+<!-- ================= COUNTS SECTION ================= -->
+
+<div class="dashboard-counts">
+
+<p>👤 <b>Total Users:</b> {{ total_users }}</p>
+
+<p>📄 <b>Total Reports:</b> {{ total_reports }}</p>
+
+<p>💬 <b>Total Messages:</b> {{ total_messages }}</p>
+
+<p>🍽️ <b>Total Diet Requests:</b> {{ total_diet_requests }}</p>
+
+</div>
+
+<br>
+
+<h3>All User Searches</h3>
+
+<!-- View Messages Button -->
+
+<a href="/admin_messages">
+
+<button>
+
+📩 View Messages
+
+</button>
+
+</a>
+
+<br><br>
+
+<table>
+
+<tr>
+
+<th>ID</th>
+<th>Name</th>
+<th>Age</th>
+<th>Height</th>
+<th>Weight</th>
+<th>Disease</th>
+<th>Decision</th>
+<th>BMI</th>
+
+</tr>
+
+{% for row in data %}
+
+<tr>
+
+<td>{{ row.id }}</td>
+<td>{{ row.name }}</td>
+<td>{{ row.age }}</td>
+<td>{{ row.height }}</td>
+<td>{{ row.weight }}</td>
+<td>{{ row.disease }}</td>
+<td>{{ row.decision }}</td>
+<td>{{ row.bmi }}</td>
+
+</tr>
+
+{% endfor %}
+
+</table>
+
+<br>
+
+<a href="/logout">
+
+<button>
+
+Logout
+
+</button>
+
+</a>
+
+</div>
+
+</body>
+
+</html>

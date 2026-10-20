@@ -1,0 +1,468 @@
+/* ================= GLOBAL ================= */
+
+body {
+
+    margin: 0;
+    padding: 0;
+
+    font-family: 'Segoe UI', sans-serif;
+
+    min-height: 100vh;
+
+    background-size: 400% 400%;
+
+    animation: gradientMove 12s ease infinite;
+
+}
+
+
+/* ================= ANIMATION ================= */
+
+@keyframes gradientMove {
+
+    0% { background-position: 0% 50%; }
+
+    50% { background-position: 100% 50%; }
+
+    100% { background-position: 0% 50%; }
+
+}
+
+
+/* ================= LOGIN PAGE ================= */
+
+.login-page {
+
+    background:
+    linear-gradient(
+        135deg,
+        #84fab0,
+        #8fd3f4,
+        #a6c1ee
+    );
+
+}
+
+
+/* ================= HOME PAGE ================= */
+
+.home-page {
+
+    background:
+    linear-gradient(
+        135deg,
+        #fddb92,
+        #d1fdff,
+        #a1c4fd
+    );
+
+}
+
+
+/* ================= RESULT PAGE ================= */
+
+.result-page {
+
+    background:
+    linear-gradient(
+        135deg,
+        #ffecd2,
+        #fcb69f,
+        #ffdde1
+    );
+
+}
+
+
+/* ================= ADMIN PAGE ================= */
+
+.admin-page {
+
+    background:
+    linear-gradient(
+        135deg,
+        #667eea,
+        #764ba2,
+        #89f7fe
+    );
+
+}
+
+
+/* ================= MESSAGE PAGE ================= */
+
+.message-page {
+
+    background:
+    linear-gradient(
+        135deg,
+        #43e97b,
+        #38f9d7,
+        #fa709a
+    );
+
+}
+
+
+/* ================= GLASS EFFECT CONTAINER ================= */
+
+.container {
+
+    width: 90%;
+    max-width: 800px;
+
+    margin: 60px auto;
+
+    padding: 30px;
+
+    border-radius: 20px;
+
+    /* Glass effect */
+
+    background: rgba(255,255,255,0.15);
+
+    backdrop-filter: blur(12px);
+
+    -webkit-backdrop-filter: blur(12px);
+
+    border: 1px solid rgba(255,255,255,0.3);
+
+    box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+
+}
+
+
+/* ================= LOGIN BOX CENTER ================= */
+
+.login-page .container {
+
+    max-width: 400px;
+
+}
+
+
+
+/* ================= HEADINGS ================= */
+
+h1 {
+
+    text-align: center;
+
+    color: #2e7d32;   /* Dark green */
+
+    font-weight: bold;
+
+}
+
+h2 {
+
+    text-align: center;
+
+    color: #1b5e20;   /* Darker green */
+
+    font-weight: bold;
+
+}
+
+h3 {
+
+    color: #0d47a1;   /* Dark blue */
+
+    font-weight: bold;
+
+}
+
+
+/* ================= INPUT FIELDS ================= */
+
+input,
+textarea,
+select {
+
+    width: 100%;
+
+    padding: 12px;
+
+    margin: 8px 0;
+
+    border-radius: 10px;
+
+    border: none;
+
+    font-size: 14px;
+
+}
+
+
+/* ================= BUTTON ================= */
+
+button {
+
+    width: 100%;
+
+    padding: 12px;
+
+    background: #ff4b6e;
+
+    color: white;
+
+    border: none;
+
+    border-radius: 10px;
+
+    font-size: 16px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+
+}
+
+button:hover {
+
+    background: #e63e5c;
+
+    transform: scale(1.03);
+
+}
+
+
+/* ================= TABLE ================= */
+
+table {
+
+    width: 100%;
+
+    border-collapse: collapse;
+
+    margin-top: 20px;
+
+    background: rgba(255,255,255,0.9);
+
+    border-radius: 10px;
+
+    overflow: hidden;
+
+}
+
+th,
+td {
+
+    border: 1px solid #ddd;
+
+    padding: 10px;
+
+    text-align: center;
+
+}
+
+th {
+
+    background-color: #4CAF50;
+
+    color: white;
+
+}
+
+
+/* ================= REPORT BOX ================= */
+
+.report {
+
+    margin-top: 20px;
+
+    padding: 15px;
+
+    background: rgba(255,255,255,0.9);
+
+    border-left: 6px solid green;
+
+    border-radius: 10px;
+
+}
+
+
+/* ================= SUGGESTION BOX ================= */
+
+.suggestion {
+
+    margin-top: 20px;
+
+    padding: 15px;
+
+    background: rgba(255,255,255,0.9);
+
+    border-radius: 10px;
+
+}
+/* ================= FLOATING FOOD ANIMATION ================= */
+
+.food-background {
+
+    position: fixed;
+
+    width: 100%;
+    height: 100%;
+
+    top: 0;
+    left: 0;
+
+    overflow: hidden;
+
+    z-index: -1;
+
+}
+
+
+/* Individual floating items */
+
+.food {
+
+    position: absolute;
+
+    font-size: 28px;
+
+    opacity: 0.7;
+
+    animation: floatFood linear infinite;
+
+}
+
+
+/* Floating Animation */
+
+@keyframes floatFood {
+
+    0% {
+
+        transform: translateY(100vh) rotate(0deg);
+
+        opacity: 0;
+
+    }
+
+    10% {
+
+        opacity: 0.7;
+
+    }
+
+    100% {
+
+        transform: translateY(-10vh) rotate(360deg);
+
+        opacity: 0;
+
+    }
+
+}
+
+
+/* Different speeds */
+
+.food:nth-child(1) {
+
+    left: 5%;
+
+    animation-duration: 14s;
+
+}
+
+.food:nth-child(2) {
+
+    left: 15%;
+
+    animation-duration: 18s;
+
+}
+
+.food:nth-child(3) {
+
+    left: 25%;
+
+    animation-duration: 12s;
+
+}
+
+.food:nth-child(4) {
+
+    left: 35%;
+
+    animation-duration: 16s;
+
+}
+
+.food:nth-child(5) {
+
+    left: 45%;
+
+    animation-duration: 20s;
+
+}
+
+.food:nth-child(6) {
+
+    left: 55%;
+
+    animation-duration: 15s;
+
+}
+
+.food:nth-child(7) {
+
+    left: 65%;
+
+    animation-duration: 17s;
+
+}
+
+.food:nth-child(8) {
+
+    left: 75%;
+
+    animation-duration: 13s;
+
+}
+
+.food:nth-child(9) {
+
+    left: 85%;
+
+    animation-duration: 19s;
+
+}
+
+.food:nth-child(10) {
+
+    left: 95%;
+
+    animation-duration: 16s;
+
+}
+.dashboard-counts {
+
+    background: rgba(255,255,255,0.9);
+
+    padding: 15px;
+
+    border-radius: 12px;
+
+    margin-bottom: 20px;
+
+    font-size: 18px;
+
+    color: black;
+
+    text-align: left;
+
+    width: fit-content;
+
+}
+
+.dashboard-counts p {
+
+    margin: 6px 0;
+
+    font-weight: bold;
+
+}

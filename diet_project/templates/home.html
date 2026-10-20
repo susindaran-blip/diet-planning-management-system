@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Diet Recommendation Form</title>
+
+<link rel="stylesheet"
+href="/static/css/style.css">
+
+</head>
+
+<body class="home-page">
+<div class="food-background">
+
+<span class="food">🍎</span>
+<span class="food">🥕</span>
+<span class="food">🥗</span>
+<span class="food">🍉</span>
+<span class="food">🥑</span>
+<span class="food">🍓</span>
+<span class="food">🍌</span>
+<span class="food">🍇</span>
+<span class="food">🥒</span>
+<span class="food">🍍</span>
+
+</div>
+
+<div class="container">
+
+<h1>🥗 Diet Recommendation Form</h1>
+
+<form method="POST" action="/home">
+
+
+<!-- NAME -->
+
+<label>Name</label>
+
+<input type="text"
+name="name"
+placeholder="Enter Your Name"
+required>
+
+
+
+<!-- AGE -->
+
+<label>Age</label>
+
+<input type="number"
+name="age"
+placeholder="Enter Age"
+required>
+
+
+
+<!-- HEIGHT -->
+
+<label>Height (cm)</label>
+
+<input type="number"
+name="height"
+placeholder="Enter Height in cm"
+required>
+
+
+
+<!-- WEIGHT -->
+
+<label>Weight (kg)</label>
+
+<input type="number"
+name="weight"
+placeholder="Enter Weight in kg"
+required>
+
+
+
+<!-- DISEASE (Typing + Dropdown) -->
+
+<label>Enter Disease</label>
+
+<input list="diseases"
+name="disease"
+placeholder="Type or Select Disease"
+required>
+
+
+<datalist id="diseases">
+
+<option value="Diabetes">
+<option value="Hypertension">
+<option value="Heart Disease">
+<option value="Thyroid">
+<option value="Obesity">
+<option value="Weight Loss">
+<option value="Weight Gain">
+<option value="PCOS">
+<option value="Kidney Disease">
+<option value="Liver Disease">
+<option value="Cholesterol">
+<option value="Anemia">
+<option value="Asthma">
+<option value="Arthritis">
+<option value="Cancer">
+<option value="Migraine">
+<option value="Depression">
+<option value="Anxiety">
+<option value="General">
+<option value="Fever">
+<option value="Cold">
+<option value="Ulcer">
+<option value="Digestive Issues">
+<option value="Skin Problems">
+<option value="Eye Problems">
+<option value="Bone Weakness">
+<option value="Vitamin Deficiency">
+<option value="Fatigue">
+<option value="Low Immunity">
+<option value="High BP">
+
+</datalist>
+<label>Select Diet Plan:</label>
+
+<select name="plan_type" required>
+
+<option value="day">🥗 Day Diet</option>
+
+<option value="week">📅 Weekly Diet</option>
+
+<option value="month">🗓️ Monthly Diet</option>
+
+</select>
+
+<br><br>
+
+<!-- DECISION (TEXT BOX) -->
+
+<label>Decision</label>
+
+<input type="text"
+name="decision"
+placeholder="Enter Your Goal (Example: Weight Loss, Fitness)"
+required>
+
+
+
+
+<br><br>
+
+<!-- SUBMIT BUTTON -->
+
+<button type="submit">
+
+🍽 Get Diet Plan
+
+</button>
+
+
+<br><br>
+
+<!-- LOGOUT BUTTON -->
+
+<a href="/logout">
+
+<button type="button">
+
+Logout
+
+</button>
+
+</a>
+
+</form>
+</div>
+<h2>Send Message to Admin</h2>
+
+<form action="/send_message" method="POST">
+
+<input type="text"
+name="sender"
+placeholder="Your Name"
+required>
+
+<textarea
+name="message"
+placeholder="Enter your message"
+required></textarea>
+
+<br>
+
+<button type="submit">
+Send Message
+</button>
+
+</form>
+
+</body>
+
+</html>
